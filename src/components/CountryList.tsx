@@ -1,3 +1,5 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
 import HolidayList from "./HolidayList"
 
 interface Props {
@@ -5,7 +7,20 @@ interface Props {
   countries: Object;
 }
 
-const CountryList = ({ year, countries }: Props) => {
+const CountryList = ({ year }: Props) => {
+  const url = "http://localhost:5254/"
+
+  const[countries, setCountries] = useState<Object>([]);
+
+  useEffect(() => { getCountries(); },[])
+
+  const getCountries = () => {
+    axios.get<Object>(url).then(results => {
+      console.log(results.data);
+      setCountries(results.data);
+    });
+  }
+
   return (
     <>
       { countries.map((country) => (
