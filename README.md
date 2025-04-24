@@ -1,11 +1,24 @@
 # Holidays around the world
 
-Run server:
+A front-end holiday app.
 
-`npm run dev`
+## Set Up
 
-Run via Docker:
+Build:
 
-`docker run -it --rm -p 5173:5173 --mount src="$(pwd)",target=/usr/src/app,type=bind -w /usr/src/app node:22-alpine npm run dev`
+```
+docker build -t holiday-fe .
+```
 
-Then visit [localhost:5173](http://localhost:5173/)
+Run:
+
+```
+docker run --rm -p 5173:5173 holiday-fe
+```
+
+Then visit [localhost:5173](http://localhost:5173/) with the back-end server running on port 5254.
+
+## To Do
+
+- Additional pages/views
+- Disambiguate holidays w/ same name & date
