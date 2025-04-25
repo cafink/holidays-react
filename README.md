@@ -22,3 +22,4 @@ Then visit [localhost:5173](http://localhost:5173/) with the back-end server run
 
 - Additional pages/views
 - Disambiguate holidays w/ same name & date
+- Use environment variable for back-end URL
